@@ -14,7 +14,7 @@ the `cacti_graph_template_oracle_tablespace.xml` should be imported into cacti
 
 edit the `oracle_tablespace.xml`
 
-replace the string between <arg_prepend> and </arg_prepend> at line 4 like this
+replace the string between &lt;arg_prepend&gt; and &lt;/arg_prepend&gt; at line 4 like this
 
 ```xml
 <arg_prepend>username password |host_hostname| port(default 1521) oracle_sid</arg_prepend>
