@@ -1,0 +1,39 @@
+<interface>
+	<name>Tablespace</name>
+	<script_path>python |path_cacti|/scripts/get_oracle_tablespace.py</script_path>
+	<arg_prepend>system oracle |host_hostname| 1521 oradb</arg_prepend>
+	<arg_index>index</arg_index>
+	<arg_query>query</arg_query>
+	<arg_get>get</arg_get>
+	<arg_num_indexes>num_indexes</arg_num_indexes>
+	<output_delimeter>!</output_delimeter>
+	<index_order>TAB_NAME:TAB_INDEX</index_order>
+	<index_order_type>numeric</index_order_type>
+	<index_title_format>|chosen_order_field|</index_title_format>
+
+	<fields>
+		<TAB_INDEX>
+			<name>Table Index</name>
+			<direction>input</direction>
+			<query_name>index</query_name>
+		</TAB_INDEX>
+
+		<TAB_NAME>
+			<name>TAB_NAME</name>
+			<direction>input</direction>
+			<query_name>tabname</query_name>
+		</TAB_NAME>
+
+		<TOTAL>
+			<name>Total Size</name>
+			<direction>output</direction>
+			<query_name>total</query_name>
+		</TOTAL>
+		<USED>
+			<name>Used Size</name>
+			<direction>output</direction>
+			<query_name>used</query_name>
+		</USED>
+	</fields>
+	
+</interface>
