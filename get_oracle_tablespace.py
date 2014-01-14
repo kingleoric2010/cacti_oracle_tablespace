@@ -14,7 +14,9 @@ try:
 
     tbn = "%s:%s/%s" % (host, port, inst)
 
-    con = cx_Oracle.connect(username, password, tbn)
+    pool = cx_Oracle.SessionPool(user=username, password=password, dsn=tbn, min=1, max=5, increment=1)
+    con = pool.acquire()
+    #con = cx_Oracle.connect(username, password, tbn)
     cur = con.cursor()
     cur.execute("""
 SELECT 
